@@ -1,6 +1,6 @@
 # Problem 1
-Problem 1: A Todo list. 
-It implements at least: 
+Problem 1: A Todo list.\
+This Todo list implements at least: 
 * Creation and deletion of tasks
 * Tracking done state and allowing tasks to be set to complete
 * Supporting title, description, due date, completed with description and due date being mutable (note also requirement to change completion status above)
