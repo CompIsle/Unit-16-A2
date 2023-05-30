@@ -16,5 +16,11 @@ Design of problem 1 ...
 ## Test Plan
 Test Plan...
 
+|  Test number | Purpose of test  | Test data  | Expected result  | Actual result  |  Comments |
+|---|---|---|---|---|---|
+| 1 |   |   |   |   |   |
+| 2 |   |   |   |   |   |
+| 3 |   |   |   |   |   |
+
 ## Test Results
 Test Results...
