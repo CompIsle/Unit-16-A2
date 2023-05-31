@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,9 +42,14 @@ namespace Problem_1
 
         private void EditTask_Click(object sender, RoutedEventArgs e)
         {
+            // Retrieve the clicked button object from the sender argument.
             Button button = (Button)sender;
+            // Get the associated Task object from the Tag property of the button.
             Task task = (Task)button.Tag;
+            // Call the ShowDialog method of the EditTaskDialog class to display a dialog box for editing the task's title.
+            // Pass the current title of the task as a parameter.
             string newTitle = EditTaskDialog.ShowDialog(task.Title);
+            // If a non-empty string is returned from the dialog, update the task's title with the new value.
             if (!string.IsNullOrWhiteSpace(newTitle))
             {
                 task.Title = newTitle;
@@ -59,10 +65,14 @@ namespace Problem_1
 
         public static class EditTaskDialog
         {
+            // This method displays a dialog box to edit the task title.
+            // It takes the currentTitle as input and returns the new title entered by the user.
             public static string ShowDialog(string currentTitle)
             {
                 // In a real application, you would display a dialog box or a separate window to edit the task title.
                 // For simplicity, we'll use a simple input dialog using MessageBox in this example.
+                //The InputBox method from the Microsoft.VisualBasic.Interaction class is used to display an input dialog box.
+                // It prompts the user to enter a new title and returns the entered value as a string.
                 string newTitle = Microsoft.VisualBasic.Interaction.InputBox("Edit Task", "Enter the new title:", currentTitle);
                 return newTitle;
             }
@@ -85,14 +95,54 @@ namespace Problem_1
         {
             // Clear the selection
             lstTasks.SelectedIndex = -1;
+            btnEdit.IsEnabled = isTaskSelected;
+            btnDelete.IsEnabled = isTaskSelected;
         }
 
 
     }
-    public class Task
+    public class Task : INotifyPropertyChanged
     {
-        public string Title { get; set; }
-        public bool Completed { get; set; }
+        // The Title property represents the title of the task.
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set
+            {
+                // Check if the new value is different from the current value.
+                if (title != value)
+                {
+                    title = value;
+                    // Raise the PropertyChanged event to notify subscribers that the Title property has changed.
+                    OnPropertyChanged(nameof(Title));
+                }
+            }
+        }
+
+        private bool completed;
+        public bool Completed
+        {
+            get { return completed; }
+            set
+            {
+                if (completed != value)
+                {
+                    completed = value;
+                    OnPropertyChanged(nameof(Completed));
+                }
+            }
+        }
+
+        // The PropertyChanged event is used to notify subscribers (such as the UI) when a property value changes.
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // This method raises the PropertyChanged event.
+        // It takes the name of the property that has changed as an argument.
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 
 }

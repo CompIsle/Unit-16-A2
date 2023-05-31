@@ -40,5 +40,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="10">
+            <Button x:Name="btnEdit" Content="Edit" Click="EditTask_Click" IsEnabled="False" Height="38" />
+            <Button x:Name="btnDelete" Content="Delete" Click="DeleteTask_Click" IsEnabled="False" Height="37" />
+        </StackPanel>
     </Grid>
 </Window>
