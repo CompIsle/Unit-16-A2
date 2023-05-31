@@ -12,16 +12,18 @@ In this documents it will describe the designs, test plans and test results of p
 ## Design 
 Design of problem 2 ...
 
-## Test Plan
-Test Plan...
+## Test
+Test
 
-|  Test number | Purpose of test  | Test data  | Expected result  | Actual result  |  Comments |
-|---|---|---|---|---|---|
-| 1 |   |   |   |   |   |
-| 2 |   |   |   |   |   |
-| 3 |   |   |   |   |   |
-| 4 |   |   |   |   |   |
-| 5 |   |   |   |   |   |
+|  Test number | Purpose of test  | How the test is done.| Test data  | Expected result  | Actual result  |  Comments |
+|---|---|---|---|---|---|---| 
+| 1 |  To Test that the Unique numbers are generated.| Console.log of the generated numbers  | Null  | Random numbers  |   | | 
+| 2 |   |   |   |   |   |  | 
+| 3 |   |   |   |   |   |  | 
+| 4 |   |   |   |   |   |  | 
+| 5 |   |   |   |   |   |  | 
 
-## Test Results
-Test Results...
+
+
+
+## Evulaiton/Cosnlsuion ????
