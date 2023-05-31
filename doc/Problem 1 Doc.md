@@ -14,7 +14,7 @@ In this documents it will describe the designs, test plans and test results of p
 Design of problem 1 ...
 
 ## Test 
-Test ...
+Test 
 
 |  Test number | Purpose of test  | Test data  | Expected result  | Actual result  |  Comments |
 |---|---|---|---|---|---|
@@ -22,10 +22,7 @@ Test ...
 | 2 |  Test to see if Deleting tasks is working | Task = Get Milk  | Task is delted from task list  |   |   |
 | 3 |  Test to see if can edit task |  Task = Get Milk | Task is changed to new input  | Task is not changed  | it allows you to go to change it in the message box but it dosent change the task.  |
 | 4 |  Redo of Test 3 after fixes | Task = Get Milk  | Task is changed to new input  |  Task is changed to new input | Problem was fixed. had to add INotifyPropertyChanged to the task class to notify of any changes and update them. |
-| 5 |   |   |   |   |   |
-
-## Test Results
-Test Results...
+| 5 |  Test to see if the filters are working | One completed and one non completed task  | When clicking the button/checkbox markded Complted, only completed tasks will appear  |   |   |
 
 
 ## Evulaiton/Cosnlsuion ????
