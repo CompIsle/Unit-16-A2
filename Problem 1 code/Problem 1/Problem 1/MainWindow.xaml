@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Problem_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="275">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="txtTitle" Width="120" Margin="0,0,5,0" />
+            <Button Content="Add Task" Click="AddTask_Click" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <RadioButton x:Name="radAllTasks" Content="All Tasks" IsChecked="True" Checked="Filter_Checked" Margin="10" />
+            <RadioButton x:Name="radIncompleteTasks" Content="Incomplete Tasks" Checked="Filter_Checked" Margin="10" />
+        </StackPanel>
+
+        <ListBox Grid.Row="2" x:Name="lstTasks" Margin="10,10,56,73" SelectionChanged="lstTasks_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock FontWeight="Bold" Text="{Binding Title}" />
+                        <CheckBox IsChecked="{Binding Completed}" Content="Completed" />
+                        <Button Content="Edit" Click="EditTask_Click" Tag="{Binding}" />
+                        <Button Content="Delete" Click="DeleteTask_Click" Tag="{Binding}" />
+                        <Separator />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

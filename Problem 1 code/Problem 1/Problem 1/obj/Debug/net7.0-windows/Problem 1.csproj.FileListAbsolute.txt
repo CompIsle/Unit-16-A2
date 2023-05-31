@@ -1,0 +1,5 @@
+C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\Problem 1.csproj.AssemblyReference.cache
+C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\Problem 1_MarkupCompile.cache
+C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\Problem 1_MarkupCompile.lref
