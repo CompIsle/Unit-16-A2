@@ -41,6 +41,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
+        <!--<StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,10,10,73">
+        </StackPanel>-->
         <Button x:Name="btnEdit" Content="Edit" Click="EditTask_Click" IsEnabled="False" Margin="135,326,5,25" Grid.Row="2" Width="125"/>
         <Button x:Name="btnDelete" Content="Delete" Click="DeleteTask_Click" IsEnabled="False" Margin="10,326,135,25" Grid.Row="2" />
 
