@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,40 @@ namespace Problem_1
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+        public static class EditTaskDialog
+        {
+            public static string ShowDialog(string currentTitle)
+            {
+                // In a real application, you would display a dialog box or a separate window to edit the task title.
+                // For simplicity, we'll use a simple input dialog using MessageBox in this example.
+                string newTitle = Microsoft.VisualBasic.Interaction.InputBox("Edit Task", "Enter the new title:", currentTitle);
+                return newTitle;
+            }
+        }
+
+        private void AddTask_Click(object sender, RoutedEventArgs e)
+        {
+            string title = txtTitle.Text;
+            if (!string.IsNullOrWhiteSpace(title))
+            {
+                tasks.Add(new Task { Title = title });
+                txtTitle.Clear();
+            }
+        }
+
+
+        private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Clear the selection
+            lstTasks.SelectedIndex = -1;
         }
     }
+    public class Task
+    {
+        public string Title { get; set; }
+        public bool Completed { get; set; }
+    }
+
 }
