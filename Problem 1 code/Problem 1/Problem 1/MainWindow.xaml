@@ -33,16 +33,17 @@
                     <StackPanel Orientation="Vertical">
                         <TextBlock FontWeight="Bold" Text="{Binding Title}" />
                         <CheckBox IsChecked="{Binding Completed}" Content="Completed" />
-                        <Button Content="Delete" Click="DeleteTask_Click" Tag="{Binding}" Grid.Row="2" />
-                        <Button Content="Edit" Click="EditTask_Click" Tag="{Binding}"  Grid.Row="2" />
+                        <!--<Button Content="Delete" Click="DeleteTask_Click" Tag="{Binding}" Grid.Row="2" />
+                        <Button Content="Edit" Click="EditTask_Click" Tag="{Binding}"  Grid.Row="2" />-->
                         <Separator />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        
         <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="10">
-            <Button x:Name="btnEdit" Content="Edit" Click="EditTask_Click" IsEnabled="False" Height="38" />
-            <Button x:Name="btnDelete" Content="Delete" Click="DeleteTask_Click" IsEnabled="False" Height="37" />
+            <Button x:Name="btnEdit" Content="Edit" Click="EditTask_Click" IsEnabled="False" Height="38" Width="84" />
+            <Button x:Name="btnDelete" Content="Delete" Click="DeleteTask_Click" IsEnabled="False" Height="37" Width="95" />
         </StackPanel>
     </Grid>
 </Window>

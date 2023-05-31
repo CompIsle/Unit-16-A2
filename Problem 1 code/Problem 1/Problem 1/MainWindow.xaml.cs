@@ -40,7 +40,7 @@ namespace Problem_1
             }
         }
 
-        private void EditTask_Click(object sender, RoutedEventArgs e)
+        /*private void EditTask_Click(object sender, RoutedEventArgs e)
         {
             // Retrieve the clicked button object from the sender argument.
             Button button = (Button)sender;
@@ -61,6 +61,36 @@ namespace Problem_1
             Button button = (Button)sender;
             Task task = (Task)button.Tag;
             tasks.Remove(task);
+        }*/
+
+        private void EditTask_Click(object sender, RoutedEventArgs e)
+        {
+            // Check if a task is selected
+            if (lstTasks.SelectedItem is Task selectedTask)
+            {
+                // Retrieve the current title of the selected task
+                string currentTitle = selectedTask.Title;
+
+                // Call the ShowDialog method of the EditTaskDialog class to display a dialog box for editing the task's title.
+                // Pass the current title of the task as a parameter.
+                string newTitle = EditTaskDialog.ShowDialog(currentTitle);
+
+                // If a non-empty string is returned from the dialog, update the task's title with the new value.
+                if (!string.IsNullOrWhiteSpace(newTitle))
+                {
+                    selectedTask.Title = newTitle;
+                }
+            }
+        }
+
+        private void DeleteTask_Click(object sender, RoutedEventArgs e)
+        {
+            // Check if a task is selected
+            if (lstTasks.SelectedItem is Task selectedTask)
+            {
+                // Remove the selected task from the ObservableCollection
+                tasks.Remove(selectedTask);
+            }
         }
 
         public static class EditTaskDialog
@@ -93,8 +123,8 @@ namespace Problem_1
 
         private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Clear the selection
-            lstTasks.SelectedIndex = -1;
+            // Enable or disable the edit and delete buttons based on task selection
+            bool isTaskSelected = lstTasks.SelectedItem is Task;
             btnEdit.IsEnabled = isTaskSelected;
             btnDelete.IsEnabled = isTaskSelected;
         }
