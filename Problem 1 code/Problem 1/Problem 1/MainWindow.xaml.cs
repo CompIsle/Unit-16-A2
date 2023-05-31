@@ -39,7 +39,7 @@ namespace Problem_1
             }
         }
 
-        /*private void EditTask_Click(object sender, RoutedEventArgs e)
+        private void EditTask_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
             Task task = (Task)button.Tag;
@@ -48,7 +48,7 @@ namespace Problem_1
             {
                 task.Title = newTitle;
             }
-        }*/
+        }
 
         private void DeleteTask_Click(object sender, RoutedEventArgs e)
         {
@@ -57,7 +57,7 @@ namespace Problem_1
             tasks.Remove(task);
         }
 
-        /*public static class EditTaskDialog
+        public static class EditTaskDialog
         {
             public static string ShowDialog(string currentTitle)
             {
@@ -66,7 +66,7 @@ namespace Problem_1
                 string newTitle = Microsoft.VisualBasic.Interaction.InputBox("Edit Task", "Enter the new title:", currentTitle);
                 return newTitle;
             }
-        }*/
+        }
 
         /*private void Filter_Checked(object sender, RoutedEventArgs e)
         {

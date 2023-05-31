@@ -34,7 +34,7 @@
                         <TextBlock FontWeight="Bold" Text="{Binding Title}" />
                         <CheckBox IsChecked="{Binding Completed}" Content="Completed" />
                         <Button Content="Delete" Click="DeleteTask_Click" Tag="{Binding}" Grid.Row="2" />
-                        <!--<Button Content="Edit" Click="EditTask_Click" Tag="{Binding}"  Grid.Row="2" />-->
+                        <Button Content="Edit" Click="EditTask_Click" Tag="{Binding}"  Grid.Row="2" />
                         <Separator />
                     </StackPanel>
                 </DataTemplate>
