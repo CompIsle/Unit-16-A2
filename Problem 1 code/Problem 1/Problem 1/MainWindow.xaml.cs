@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,8 @@ namespace Problem_1
             if (!string.IsNullOrWhiteSpace(title))
             {
                 tasks.Add(new Task { Title = title, Description = description, DueDate = dueDate });
+
+                // Clear the input fields after adding the task
                 txtTitle.Clear();
                 txtDescription.Clear();
                 dpDueDate.SelectedDate = null;
