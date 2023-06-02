@@ -13,6 +13,10 @@ In this documents it will describe the designs, test plans and test results of p
 ## Design 
 Design of problem 1 ...
 
+### UI Design
+
+### Code Design
+
 ## Test 
 Test 
 

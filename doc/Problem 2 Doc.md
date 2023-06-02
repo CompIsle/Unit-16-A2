@@ -12,6 +12,8 @@ In this documents it will describe the designs, test plans and test results of p
 ## Design 
 Design of problem 2 ...
 
+### Code Design
+
 ## Test
 Test
 
