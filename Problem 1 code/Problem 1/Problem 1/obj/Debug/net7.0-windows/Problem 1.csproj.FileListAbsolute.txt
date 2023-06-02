@@ -19,3 +19,5 @@ C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-w
 C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\Problem 1.pdb
 C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\Problem 1.genruntimeconfig.cache
 C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\ref\Problem 1.dll
+C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\EditTaskPage.baml
+C:\Users\428884\Unit 16 A2\Problem 1 code\Problem 1\Problem 1\obj\Debug\net7.0-windows\EditTaskPage.g.cs

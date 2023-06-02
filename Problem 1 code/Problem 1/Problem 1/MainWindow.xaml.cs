@@ -68,17 +68,21 @@ namespace Problem_1
             // Check if a task is selected
             if (listOfTasks.SelectedItem is Task selectedTask)
             {
-                // Retrieve the current title of the selected task
+                // Retrieve the current values of the selected task
                 string currentTitle = selectedTask.Title;
+                string currentDescription = selectedTask.Description;
+                DateTime currentDueDate = selectedTask.DueDate;
 
-                // Call the ShowDialog method of the EditTaskDialog class to display a dialog box for editing the task's title.
-                // Pass the current title of the task as a parameter.
-                string newTitle = EditTaskDialog.ShowDialog(currentTitle);
+                // Call the ShowDialog method of the EditTaskDialog class to display a dialog box for editing the task.
+                // Pass the current values as parameters.
+                Task editedTask = EditTaskDialog.ShowDialog(currentTitle, currentDescription, currentDueDate);
 
-                // If a non-empty string is returned from the dialog, update the task's title with the new value.
-                if (!string.IsNullOrWhiteSpace(newTitle))
+                // If a valid task object is returned from the dialog, update the selected task with the edited values.
+                if (editedTask != null)
                 {
-                    selectedTask.Title = newTitle;
+                    selectedTask.Title = editedTask.Title;
+                    selectedTask.Description = editedTask.Description;
+                    selectedTask.DueDate = editedTask.DueDate;
                 }
             }
         }
@@ -93,33 +97,64 @@ namespace Problem_1
             }
         }
 
+
         public static class EditTaskDialog
         {
-            // This method displays a dialog box to edit the task title.
-            // It takes the currentTitle as input and returns the new title entered by the user.
-            public static string ShowDialog(string currentTitle)
+            // This method displays a dialog box to edit the task title, description, and due date.
+            // It takes the current values as input and returns a modified task object with the edited values.
+            public static Task ShowDialog(string currentTitle, string currentDescription, DateTime currentDueDate)
             {
-                // In a real application, you would display a dialog box or a separate window to edit the task title.
+                // Create a new instance of the Task class with the current values
+                Task editedTask = new Task
+                {
+                    Title = currentTitle,
+                    Description = currentDescription,
+                    DueDate = currentDueDate
+                };
+
+                // In a real application, you would display a custom dialog box or a separate window to edit the task.
                 // For simplicity, we'll use a simple input dialog using MessageBox in this example.
-                //The InputBox method from the Microsoft.VisualBasic.Interaction class is used to display an input dialog box.
-                // It prompts the user to enter a new title and returns the entered value as a string.
+                // The InputBox method from the Microsoft.VisualBasic.Interaction class is used to display an input dialog box.
+                // It prompts the user to enter new values and returns the entered values as a string array.
+
+                // Prompt the user to enter a new title
                 string newTitle = Microsoft.VisualBasic.Interaction.InputBox("Edit Task", "Enter the new title:", currentTitle);
-                return newTitle;
+                if (!string.IsNullOrWhiteSpace(newTitle))
+                {
+                    editedTask.Title = newTitle;
+                }
+
+                // Prompt the user to enter a new description
+                string newDescription = Microsoft.VisualBasic.Interaction.InputBox("Edit Task", "Enter the new description:", currentDescription);
+                if (!string.IsNullOrWhiteSpace(newDescription))
+                {
+                    editedTask.Description = newDescription;
+                }
+
+                // Prompt the user to enter a new due date
+                string newDueDate = Microsoft.VisualBasic.Interaction.InputBox("Edit Task", "Enter the new due date (MM/DD/YYYY):", currentDueDate.ToString("MM/dd/yyyy"));
+                if (!string.IsNullOrWhiteSpace(newDueDate) && DateTime.TryParse(newDueDate, out DateTime parsedDueDate))
+                {
+                    editedTask.DueDate = parsedDueDate;
+                }
+
+                // Return the modified task object
+                return editedTask;
             }
         }
 
-            /*private void Filter_Checked(object sender, RoutedEventArgs e)
+        /*private void Filter_Checked(object sender, RoutedEventArgs e)
+        {
+            if (radAllTasks.IsChecked == true)
             {
-                if (radAllTasks.IsChecked == true)
-                {
-                    lstTasks.ItemsSource = tasks;
-                }
-                else if (radIncompleteTasks.IsChecked == true)
-                {
-                var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
-                    lstTasks.ItemsSource = incompleteTasks;
-                }
-            }*/
+                lstTasks.ItemsSource = tasks;
+            }
+            else if (radIncompleteTasks.IsChecked == true)
+            {
+            var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
+                lstTasks.ItemsSource = incompleteTasks;
+            }
+        }*/
 
         private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
