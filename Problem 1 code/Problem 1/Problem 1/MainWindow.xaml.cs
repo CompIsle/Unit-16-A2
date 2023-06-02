@@ -31,6 +31,7 @@ namespace Problem_1
             string title = txtTitle.Text;
             string description = txtDescription.Text;
             DateTime dueDate = dpDueDate.SelectedDate ?? DateTime.Now;
+
             if (!string.IsNullOrWhiteSpace(title))
             {
                 tasks.Add(new Task { Title = title, Description = description, DueDate = dueDate });
