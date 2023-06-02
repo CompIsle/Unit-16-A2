@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Problem_1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private ObservableCollection<Task> tasks;
@@ -29,14 +26,17 @@ namespace Problem_1
             tasks = new ObservableCollection<Task>();
             listOfTasks.ItemsSource = tasks;
         }
-
         private void AddTask_Click(object sender, RoutedEventArgs e)
         {
             string title = txtTitle.Text;
+            string description = txtDescription.Text;
+            DateTime dueDate = dpDueDate.SelectedDate ?? DateTime.Now;
             if (!string.IsNullOrWhiteSpace(title))
             {
-                tasks.Add(new Task { Title = title });
+                tasks.Add(new Task { Title = title, Description = description, DueDate = dueDate });
                 txtTitle.Clear();
+                txtDescription.Clear();
+                dpDueDate.SelectedDate = null;
             }
         }
 
@@ -108,20 +108,20 @@ namespace Problem_1
             }
         }
 
-        /*private void Filter_Checked(object sender, RoutedEventArgs e)
-        {
-            if (radAllTasks.IsChecked == true)
+            /*private void Filter_Checked(object sender, RoutedEventArgs e)
             {
-                lstTasks.ItemsSource = tasks;
-            }
-            else if (radIncompleteTasks.IsChecked == true)
-            {
-            var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
-                lstTasks.ItemsSource = incompleteTasks;
-            }
-        }*/
+                if (radAllTasks.IsChecked == true)
+                {
+                    lstTasks.ItemsSource = tasks;
+                }
+                else if (radIncompleteTasks.IsChecked == true)
+                {
+                var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
+                    lstTasks.ItemsSource = incompleteTasks;
+                }
+            }*/
 
-        private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Enable or disable the edit and delete buttons based on task selection
             bool isTaskSelected = listOfTasks.SelectedItem is Task;
@@ -135,6 +135,8 @@ namespace Problem_1
     {
         // The Title property represents the title of the task.
         private string title;
+        public string TaskDescription { get; set; }
+        public DateTime TaskDueDate { get; set; }
         public string Title
         {
             get { return title; }
@@ -146,6 +148,33 @@ namespace Problem_1
                     title = value;
                     // Raise the PropertyChanged event to notify subscribers that the Title property has changed.
                     OnPropertyChanged(nameof(Title));
+                }
+            }
+        }
+        private string description;
+        public string Description
+        {
+            get { return description; }
+            set
+            {
+                if (description != value)
+                {
+                    description = value;
+                    OnPropertyChanged(nameof(Description));
+                }
+            }
+        }
+
+        private DateTime dueDate;
+        public DateTime DueDate
+        {
+            get { return dueDate; }
+            set
+            {
+                if (dueDate != value)
+                {
+                    dueDate = value;
+                    OnPropertyChanged(nameof(DueDate));
                 }
             }
         }
