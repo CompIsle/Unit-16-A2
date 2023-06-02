@@ -121,7 +121,7 @@ namespace Problem_1
                 }
             }*/
 
-            private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Enable or disable the edit and delete buttons based on task selection
             bool isTaskSelected = listOfTasks.SelectedItem is Task;
@@ -135,8 +135,6 @@ namespace Problem_1
     {
         // The Title property represents the title of the task.
         private string title;
-        public string TaskDescription { get; set; }
-        public DateTime TaskDueDate { get; set; }
         public string Title
         {
             get { return title; }

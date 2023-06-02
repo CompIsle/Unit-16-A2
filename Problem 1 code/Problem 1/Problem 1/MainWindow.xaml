@@ -37,9 +37,9 @@
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
                         <TextBlock FontWeight="Bold" Text="{Binding Title}" />
+                        <TextBlock Text="{Binding Description}" Margin="0,0,0,5"/>
+                        <TextBlock Text="{Binding DueDate}" Margin="0,0,0,5"/>
                         <CheckBox IsChecked="{Binding Completed}" Content="Completed" />
-                        <!--<Button Content="Delete" Click="DeleteTask_Click" Tag="{Binding}" Grid.Row="2" />
-                        <Button Content="Edit" Click="EditTask_Click" Tag="{Binding}"  Grid.Row="2" />-->
                         <Separator />
                     </StackPanel>
                 </DataTemplate>
