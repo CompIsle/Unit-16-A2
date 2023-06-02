@@ -27,7 +27,7 @@ namespace Problem_1
         {
             InitializeComponent();
             tasks = new ObservableCollection<Task>();
-            lstTasks.ItemsSource = tasks;
+            listOfTasks.ItemsSource = tasks;
         }
 
         private void AddTask_Click(object sender, RoutedEventArgs e)
@@ -66,7 +66,7 @@ namespace Problem_1
         private void EditTask_Click(object sender, RoutedEventArgs e)
         {
             // Check if a task is selected
-            if (lstTasks.SelectedItem is Task selectedTask)
+            if (listOfTasks.SelectedItem is Task selectedTask)
             {
                 // Retrieve the current title of the selected task
                 string currentTitle = selectedTask.Title;
@@ -86,7 +86,7 @@ namespace Problem_1
         private void DeleteTask_Click(object sender, RoutedEventArgs e)
         {
             // Check if a task is selected
-            if (lstTasks.SelectedItem is Task selectedTask)
+            if (listOfTasks.SelectedItem is Task selectedTask)
             {
                 // Remove the selected task from the ObservableCollection
                 tasks.Remove(selectedTask);
@@ -124,7 +124,7 @@ namespace Problem_1
         private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Enable or disable the edit and delete buttons based on task selection
-            bool isTaskSelected = lstTasks.SelectedItem is Task;
+            bool isTaskSelected = listOfTasks.SelectedItem is Task;
             btnEdit.IsEnabled = isTaskSelected;
             btnDelete.IsEnabled = isTaskSelected;
         }

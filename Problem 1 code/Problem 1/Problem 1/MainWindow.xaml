@@ -27,7 +27,7 @@
             <RadioButton x:Name="radIncompleteTasks" Content="Incomplete Tasks" Checked="Filter_Checked" Margin="10" />
         </StackPanel>-->
 
-        <ListBox Grid.Row="2" x:Name="lstTasks" Margin="10,10,5,73" SelectionChanged="lstTasks_SelectionChanged">
+        <ListBox Grid.Row="2" x:Name="listOfTasks" Margin="10,10,5,73" SelectionChanged="lstTasks_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
