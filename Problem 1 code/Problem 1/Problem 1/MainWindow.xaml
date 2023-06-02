@@ -17,8 +17,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,10,0,10">
-            <TextBox x:Name="txtTitle" Width="120" Margin="0,0,5,0" />
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="10,10,0,10">
+            <TextBlock Text="Title:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtTitle" Width="200" Margin="0,0,0,5"/>
+            <TextBlock Text="Description:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtDescription" Width="200" Margin="0,0,0,5"/>
+            <TextBlock Text="Due Date:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <DatePicker x:Name="dpDueDate" Width="200" Margin="0,0,0,10"/>
             <Button Content="Add Task" Click="AddTask_Click" />
         </StackPanel>
 
