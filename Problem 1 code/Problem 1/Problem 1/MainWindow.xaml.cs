@@ -44,29 +44,6 @@ namespace Problem_1
             }
         }
 
-        /*private void EditTask_Click(object sender, RoutedEventArgs e)
-        {
-            // Retrieve the clicked button object from the sender argument.
-            Button button = (Button)sender;
-            // Get the associated Task object from the Tag property of the button.
-            Task task = (Task)button.Tag;
-            // Call the ShowDialog method of the EditTaskDialog class to display a dialog box for editing the task's title.
-            // Pass the current title of the task as a parameter.
-            string newTitle = EditTaskDialog.ShowDialog(task.Title);
-            // If a non-empty string is returned from the dialog, update the task's title with the new value.
-            if (!string.IsNullOrWhiteSpace(newTitle))
-            {
-                task.Title = newTitle;
-            }
-        }
-
-        private void DeleteTask_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender;
-            Task task = (Task)button.Tag;
-            tasks.Remove(task);
-        }*/
-
         private void EditTask_Click(object sender, RoutedEventArgs e)
         {
             // Check if a task is selected
@@ -96,7 +73,7 @@ namespace Problem_1
             // Check if a task is selected
             if (listOfTasks.SelectedItem is Task selectedTask)
             {
-                // Remove the selected task from the ObservableCollection
+                // Remove the selected task
                 tasks.Remove(selectedTask);
             }
         }
@@ -116,12 +93,8 @@ namespace Problem_1
                     DueDate = currentDueDate
                 };
 
-                // In a real application, you would display a custom dialog box or a separate window to edit the task.
-                // For simplicity, we'll use a simple input dialog using MessageBox in this example.
                 // The InputBox method from the Microsoft.VisualBasic.Interaction class is used to display an input dialog box.
                 // It prompts the user to enter new values and returns the entered values as a string array.
-
-                // Prompt the user to enter a new title
                 string newTitle = Microsoft.VisualBasic.Interaction.InputBox("Edit Task", "Enter the new title:", currentTitle);
                 if (!string.IsNullOrWhiteSpace(newTitle))
                 {
