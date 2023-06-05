@@ -25,6 +25,22 @@ Task item template: A DataTemplate used to define the visual representation of e
 Checkboxes: Allows users to mark tasks as completed or incomplete.
 "Delete" and "Edit" buttons: Allows users to delete or edit selected tasks.
 
+
+### Flowchart:
+Below is a flowchart illustrating the flow of the application:
+
+graph LR
+A[Start] --> B{User Interactions}
+B -- Add Task --> C(Create New Task)
+C --> D(Update Task List)
+B -- Delete Task --> E(Delete Selected Task)
+E --> D
+B -- Edit Task --> F(Edit Selected Task)
+F --> G(Update Task List)
+G --> D
+D -- Display Task List --> B
+
+
 ### Code Design
 
 ## Test 
