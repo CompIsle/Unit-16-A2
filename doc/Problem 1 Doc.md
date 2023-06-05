@@ -28,15 +28,15 @@ Checkboxes: Allows users to mark tasks as completed or incomplete.
 
 ### Code Design
 MainWindow.xaml.cs: This file contains the code-behind logic for the main window and handles the UI interactions.
-   - It initializes the task list as an `ObservableCollection<Task>` to store the tasks.
-   - The "Add Task" button click event handler retrieves the task details from the input fields, creates a new `Task` object, and adds it to the `taskList` collection.
-   - The "Delete Task" button click event handler removes the selected task from the `taskList` collection.
+   - It initializes the task list as an ObservableCollection<Task> to store the tasks.
+   - The "Add Task" button click event handler retrieves the task details from the input fields, creates a new Task object, and adds it to the taskList collection.
+   - The "Delete Task" button click event handler removes the selected task from the taskList collection.
    - The "Edit Task" button click event handler opens a dialog window (`EditTaskDialog`) to edit the selected task.
 
 Task.cs: This class represents a single task.
-   - It implements the `INotifyPropertyChanged` interface to notify changes to UI elements.
-   - The `Task` class has properties such as `Title`, `Description`, `DueDate`, and `Completed`, which can be accessed and modified.
-   - Each property includes the `OnPropertyChanged` method, which raises the `PropertyChanged` event to notify the UI of property changes.
+   - It implements the INotifyPropertyChanged interface to notify changes to UI elements.
+   - The Task class has properties such as Title, Description, DueDate, and Completed, which can be accessed and modified.
+   - Each property includes the OnPropertyChanged method, which raises the PropertyChanged event to notify the UI of property changes.
 
 This design separates the initialization of the task list, provides clearer property change handling, and keeps the event handling code in the code-behind file. It aims to improve code organization, readability, and maintainability.
 
@@ -88,7 +88,9 @@ It removes the selected task from the ObservableCollection.
 The implementation meets the requirement of deleting tasks.
 
 ### Implementation of EditTask_Click:
+   
+### Implementation of Filters
 
-### Task class
+### Implementation of Task class
 The Task class represents a single task and implements the INotifyPropertyChanged interface.
 It includes properties for Title, Description, DueDate, and Completed.
