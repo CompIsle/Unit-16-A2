@@ -31,15 +31,16 @@ Below is a flowchart illustrating the flow of the application:
 
 ```mermaid
 graph LR
-A[Start] --> B{User Interactions}
-B -- Add Task --> C(Create New Task)
-C --> D(Update Task List)
-B -- Delete Task --> E(Delete Selected Task)
-E --> D
-B -- Edit Task --> F(Edit Selected Task)
-F --> G(Update Task List)
-G --> D
-D -- Display Task List --> B
+    A[Start] --> B{User Interactions}
+    B -- Add Task --> C(Create New Task)
+    C --> D(Update Task List)
+    D --> B
+    B -- Delete Task --> E(Delete Selected Task)
+    E --> D
+    B -- Edit Task --> F(Edit Selected Task)
+    F --> G(Update Task List)
+    G --> D
+    D -- Display Task List --> B
 ```
 
 The flowchart starts from the "Start" node and loops back to the "User Interactions" node until the user decides to exit the application. The user can perform various actions such as adding a new task, deleting a task, or editing a task, which will result in updating the task list display accordingly.
