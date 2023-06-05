@@ -38,8 +38,7 @@ graph LR
     B -- Delete Task --> E(Delete Selected Task)
     E --> D
     B -- Edit Task --> F(Edit Selected Task)
-    F --> G(Update Task List)
-    G --> D
+    F --> D
     D -- Display Task List --> B
 ```
 
