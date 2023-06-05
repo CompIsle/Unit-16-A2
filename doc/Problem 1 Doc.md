@@ -8,12 +8,10 @@ This Todo list implements at least:
 * Toggling whether all tasks or only incomplete tasks are displayed
 This program is primarily intended to demonstrate a GUI, alongside all of the other features listed above. The GUI will be implemented using WPF.
 
-In this documents it will describe the designs, test plans and test results of problem 1.
-
-## Design 
 Application Overview:
 The WPF application is a Todo list manager that allows users to create, delete, and edit tasks. It provides a graphical user interface (GUI) for managing tasks and supports features such as tracking the task's completion status, displaying task details, and filtering tasks based on completion status.
 
+## Design 
 ### UI Design
 User Interface (UI):
 The UI of the application is designed using XAML, which allows for creating a visually appealing and interactive interface. The main window consists of the following UI elements:
@@ -25,6 +23,7 @@ Task item template: A DataTemplate used to define the visual representation of e
 Checkboxes: Allows users to mark tasks as completed or incomplete.
 "Delete" and "Edit" buttons: Allows users to delete or edit selected tasks.
 
+The application provides basic functionality for managing tasks, such as adding, editing, deleting, and filtering tasks. The UI elements are intuitive and self-explanatory, making it easy for users to interact with the application.
 
 ### Code Design
 MainWindow.xaml.cs: This file contains the code-behind logic for the main window and handles the UI interactions.
@@ -32,11 +31,16 @@ MainWindow.xaml.cs: This file contains the code-behind logic for the main window
    - The "Add Task" button click event handler retrieves the task details from the input fields, creates a new Task object, and adds it to the taskList collection.
    - The "Delete Task" button click event handler removes the selected task from the taskList collection.
    - The "Edit Task" button click event handler opens a dialog window (`EditTaskDialog`) to edit the selected task.
-
+   
 Task.cs: This class represents a single task.
    - It implements the INotifyPropertyChanged interface to notify changes to UI elements.
    - The Task class has properties such as Title, Description, DueDate, and Completed, which can be accessed and modified.
    - Each property includes the OnPropertyChanged method, which raises the PropertyChanged event to notify the UI of property changes.
+   
+### Code Design
+The code follows a code-behind model, where the UI logic is defined in the MainWindow.xaml.cs file. The code is organized into event handlers for various UI events, such as button clicks and selection changes.
+
+The use of an ObservableCollection<Task> to store and bind the tasks to the list box is a good choice, as it automatically updates the UI when tasks are added or modified. The Task class implements the INotifyPropertyChanged interface to enable two-way data binding and notify the UI when task properties change.
 
 This design separates the initialization of the task list, provides clearer property change handling, and keeps the event handling code in the code-behind file. It aims to improve code organization, readability, and maintainability.
 
@@ -74,7 +78,7 @@ Test
 | 5 |  Test to see if the filters are working | One completed and one non completed task  | When clicking the button/checkbox markded Complted, only completed tasks will appear  |  |   |
 
 
-## Evulaiton/Cosnlsuion ????
+##  Evaluation
 
 ### Implementation of AddTask_Click:
 The code correctly handles the click event of the "Add Task" button.
@@ -88,9 +92,22 @@ It removes the selected task from the ObservableCollection.
 The implementation meets the requirement of deleting tasks.
 
 ### Implementation of EditTask_Click:
+The code includes an "Edit" button that is enabled when a task is selected in the list box. When the button is clicked, the code opens a dialog box (EditTaskDialog.ShowDialog) to edit the selected task's title, description, and due date. If a valid task object is returned from the dialog, the selected task is updated with the edited values.
+
+The code meets this requirement by checking for a selected task, calling the ShowDialog method to open the dialog box for editing, and updating the task if a valid edited task is returned.
    
 ### Implementation of Filters
+The code provides two radio buttons, "All Tasks" and "Incomplete Tasks," for filtering the displayed tasks. When a radio button is checked, the code updates the list box's ItemsSource property to display either all tasks or only the incomplete tasks.
+
+The code fulfills this requirement by handling the radio button's Checked event and updating the ItemsSource property of the list box accordingly.
+   
+### Implemetation of display
+The code binds the tasks collection to the list box's item template, displaying each task's title, description, due date, and completion status. Users can mark tasks as completed by checking the corresponding checkbox.
+
+The code meets this requirement by defining an item template in XAML and binding the tasks collection to the list box.
 
 ### Implementation of Task class
 The Task class represents a single task and implements the INotifyPropertyChanged interface.
 It includes properties for Title, Description, DueDate, and Completed.
+   
+Overall, the provided code satisfies the requirements previously given. It allows users to add, edit, and delete tasks, as well as filter and display tasks based on their completion status. The tasks are displayed in a list box, and the code ensures that changes to the tasks are reflected in the UI through data binding.
