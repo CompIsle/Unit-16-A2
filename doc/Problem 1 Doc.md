@@ -11,9 +11,19 @@ This program is primarily intended to demonstrate a GUI, alongside all of the ot
 In this documents it will describe the designs, test plans and test results of problem 1.
 
 ## Design 
-Design of problem 1 ...
+Application Overview:
+The WPF application is a Todo list manager that allows users to create, delete, and edit tasks. It provides a graphical user interface (GUI) for managing tasks and supports features such as tracking the task's completion status, displaying task details, and filtering tasks based on completion status.
 
 ### UI Design
+User Interface (UI):
+The UI of the application is designed using XAML, which allows for creating a visually appealing and interactive interface. The main window consists of the following UI elements:
+
+Title, Description, Due Date input fields: TextBlocks and TextBoxes for entering task details.
+"Add Task" button: Allows users to add a new task with the provided details.
+Task list: A ListBox to display the list of tasks.
+Task item template: A DataTemplate used to define the visual representation of each task in the ListBox.
+Checkboxes: Allows users to mark tasks as completed or incomplete.
+"Delete" and "Edit" buttons: Allows users to delete or edit selected tasks.
 
 ### Code Design
 
