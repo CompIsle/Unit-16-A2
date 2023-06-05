@@ -63,3 +63,20 @@ Test
 
 
 ## Evulaiton/Cosnlsuion ????
+
+### Implementation of AddTask_Click:
+The code correctly handles the click event of the "Add Task" button.
+It retrieves the task details from the input fields and creates a new Task object.
+The new task is added to the ObservableCollection, and the input fields are cleared.
+The implementation meets the requirement of creating and adding tasks.
+
+### Implementation of DeleteTask_Click:
+The code handles the click event of the "Delete" button.
+It removes the selected task from the ObservableCollection.
+The implementation meets the requirement of deleting tasks.
+
+### Implementation of EditTask_Click:
+
+### Task class
+The Task class represents a single task and implements the INotifyPropertyChanged interface.
+It includes properties for Title, Description, DueDate, and Completed.
