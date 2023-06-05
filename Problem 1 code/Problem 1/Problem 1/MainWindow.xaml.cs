@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,10 +20,11 @@ namespace Problem_1
     public partial class MainWindow : Window
     {
         private ObservableCollection<Task> tasks;
+
         public MainWindow()
         {
             InitializeComponent();
-            tasks = new ObservableCollection<Task>();
+            tasks = new ObservableCollection<Task>();  // Initialize the tasks collection
             listOfTasks.ItemsSource = tasks;
         }
         private void AddTask_Click(object sender, RoutedEventArgs e)
@@ -120,18 +120,27 @@ namespace Problem_1
             }
         }
 
-        /*private void Filter_Checked(object sender, RoutedEventArgs e)
+        private void Filter_Checked(object sender, RoutedEventArgs e)
         {
-            if (radAllTasks.IsChecked == true)
+            try
             {
-                lstTasks.ItemsSource = tasks;
+                if (radAllTasks.IsChecked == true)
+                {
+                    listOfTasks.ItemsSource = tasks;
+                }
+                else if (radIncompleteTasks.IsChecked == true)
+                {
+                    var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
+                    listOfTasks.ItemsSource = incompleteTasks;
+                }
             }
-            else if (radIncompleteTasks.IsChecked == true)
+            catch (Exception ex)
             {
-            var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
-                lstTasks.ItemsSource = incompleteTasks;
+                MessageBox.Show($"An error occurred while applying the filter: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                // Handle or log the exception as needed
             }
-        }*/
+        }
+
 
         private void lstTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -215,3 +224,4 @@ namespace Problem_1
     }
 
 }
+
