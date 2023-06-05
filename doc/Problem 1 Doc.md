@@ -26,6 +26,20 @@ Checkboxes: Allows users to mark tasks as completed or incomplete.
 "Delete" and "Edit" buttons: Allows users to delete or edit selected tasks.
 
 
+### Code Design
+MainWindow.xaml.cs: This file contains the code-behind logic for the main window and handles the UI interactions.
+   - It initializes the task list as an `ObservableCollection<Task>` to store the tasks.
+   - The "Add Task" button click event handler retrieves the task details from the input fields, creates a new `Task` object, and adds it to the `taskList` collection.
+   - The "Delete Task" button click event handler removes the selected task from the `taskList` collection.
+   - The "Edit Task" button click event handler opens a dialog window (`EditTaskDialog`) to edit the selected task.
+
+Task.cs: This class represents a single task.
+   - It implements the `INotifyPropertyChanged` interface to notify changes to UI elements.
+   - The `Task` class has properties such as `Title`, `Description`, `DueDate`, and `Completed`, which can be accessed and modified.
+   - Each property includes the `OnPropertyChanged` method, which raises the `PropertyChanged` event to notify the UI of property changes.
+
+This design separates the initialization of the task list, provides clearer property change handling, and keeps the event handling code in the code-behind file. It aims to improve code organization, readability, and maintainability.
+
 ### Flowchart:
 Below is a flowchart illustrating the flow of the application:
 
@@ -47,8 +61,6 @@ The flowchart starts from the "Start" node and loops back to the "User Interacti
 This flowchart provides a visual representation of the main flow of the application, highlighting the interactions between the user and the system.
 
 With this design documentation, you have a detailed overview of the application's design, including the UI elements, code structure, and flow of the application.
-
-### Code Design
 
 ## Test 
 Test 
