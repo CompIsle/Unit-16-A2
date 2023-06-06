@@ -124,14 +124,17 @@ namespace Problem_1
         {
             try
             {
-                if (radAllTasks.IsChecked == true)
+                if (tasks != null) // Check if tasks collection is not null
                 {
-                    listOfTasks.ItemsSource = tasks;
-                }
-                else if (radIncompleteTasks.IsChecked == true)
-                {
-                    var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
-                    listOfTasks.ItemsSource = incompleteTasks;
+                    if (radAllTasks.IsChecked == true)
+                    {
+                        listOfTasks.ItemsSource = tasks;
+                    }
+                    else if (radIncompleteTasks.IsChecked == true)
+                    {
+                        var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
+                        listOfTasks.ItemsSource = incompleteTasks;
+                    }
                 }
             }
             catch (Exception ex)
