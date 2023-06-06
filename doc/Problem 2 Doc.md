@@ -40,6 +40,18 @@ Date: The publication date of the book.
 Constructors:
 Book(string name, string title, string publishedIn, string publisher, string date): Initializes a new instance of the Book class with the provided book details. Generates the Cat value based on the provided data.
 
+### Flowchart
+  
+graph TD
+A[Start] --> B[Define CSV file path]
+B --> C[Read data from CSV and convert to DataTable]
+C --> D[Create empty list of Book objects]
+D --> E[Iterate over DataTable and create Book objects]
+E --> F[Print details of two sample books]
+F --> G[Export list of books to CSV file]
+G --> H[Display success message]
+H --> I[End]
+
 
 ## Test
 Test
