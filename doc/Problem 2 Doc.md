@@ -46,10 +46,10 @@ Test
 
 |  Test number | Purpose of test  | How the test is done.| Test data  | Expected result  | Actual result  |  Comments |
 |---|---|---|---|---|---|---| 
-| 1 |  To Test that the Unique numbers are generated.| Console.log of the generated numbers  | Problem 2 Data  | Random numbers  |   | | 
+| 1 |  To Test that the Unique numbers are generated.| Console.log of the generated numbers  | Problem 2 Data  | Random numbers  | random hash number are generated  | it worked | 
 | 2 |  To test edge case: Empty book details |  Provide a CSV file with empty book details and validate the result | CSV file with empty book details  |  Proper handling of empty values | Skipped empty book details during processing | Make sure the empty values are handled correctly | 
 | 3 | 	To test edge case: Large CSV file  | Use a large CSV file with a significant number of book records  |  Large CSV file | Large CSV file  | Large CSV file processed without any performance issues  | Ensure the system can handle large datasets | 
-| 4 | test the otput to the csv file  | open the new csv file  | Problem 2 Data  | data in new csv file |  | | 
+| 4 | test the otput to the csv file  | open the new csv file  | Problem 2 Data  | data in new csv file with hash numbers | new data is correctly there | it worked to the requirments | 
 
 
 ## Evaluation
