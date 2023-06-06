@@ -1,11 +1,18 @@
 # Problem 2
 Problem 2: The college Library needs to add all its books to a new index system.
 
-This requires a solution that will automatically read book details (title, author, publisher, publication date) from a stored CSV file and generate unique index references before writing it to a new CSV file.
+Introduction
+The College Library needs to implement a new index system for all its books. The objective is to automatically read book details from a stored CSV file, generate a unique index reference for each book, and write the indexed book details to a new CSV file. This project aims to demonstrate data and file handling using classes, objects, inheritance, polymorphism, and method overloading/overriding in C#.
 
-There should be a separate class responsible for allocating serial numbers through implementation of an interface to allow alternative implementations later.
-
-This program is primarily intended to demonstrate data and file handling. 
+Requirements
+Read book details (title, author, publisher, publication date) from a CSV file.
+Generate a unique index reference for each book.
+Write the indexed book details to a new CSV file.
+Implement a separate class responsible for allocating serial numbers.
+Demonstrate the use of classes and objects (encapsulation).
+Utilize inheritance.
+Apply polymorphism.
+Incorporate method overloading/overriding (constructors count).
 
 In this documents it will describe the designs, test plans and test results of problem 2.
 
