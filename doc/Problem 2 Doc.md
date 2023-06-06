@@ -42,6 +42,7 @@ Book(string name, string title, string publishedIn, string publisher, string dat
 
 ### Flowchart
   
+```mermaid
 graph TD
 A[Start] --> B[Define CSV file path]
 B --> C[Read data from CSV and convert to DataTable]
@@ -51,7 +52,7 @@ E --> F[Print details of two sample books]
 F --> G[Export list of books to CSV file]
 G --> H[Display success message]
 H --> I[End]
-
+```
 
 ## Test
 Test
