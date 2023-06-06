@@ -77,6 +77,10 @@ Test
 | 4 |  Redo of Test 3 after fixes |  Tittle = Get Milk / Description = Buy Milk / Due date = 2/03/2024 | Task is changed to new input  |  Task is changed to new input | Problem was fixed. had to add INotifyPropertyChanged to the task class to notify of any changes and update them. |
 | 5 |  Test to see if the filters are working | One completed and one non completed task  | When clicking the button/checkbox markded Complted, only completed tasks will appear  | It worked and you can filter which task you want to see | This meets the requirments of the brief  |
 
+   
+## Feedback
+   
+i recived feeback from charlie stating that:
 
 ##  Evaluation
 
