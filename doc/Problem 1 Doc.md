@@ -80,7 +80,12 @@ Test
    
 ## Feedback
    
-i recived feeback from charlie stating that:
+I recived feeback from charlie stating that:\
+[Monday 20:30] Charlie Smith\
+Overall, it's a good design that's easy and simple to use. One thing you could consider adding is a way to show only completed tasks.
+
+I agree with the feedback i recvived from charlie about adding a way to see only the completed tasks only.
+
 
 ##  Evaluation
 

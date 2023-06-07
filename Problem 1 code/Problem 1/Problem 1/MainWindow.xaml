@@ -30,6 +30,8 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,10,0,10">
             <RadioButton x:Name="radAllTasks" Content="All Tasks" IsChecked="True" Checked="Filter_Checked" Margin="10" />
             <RadioButton x:Name="radIncompleteTasks" Content="Incomplete Tasks" Checked="Filter_Checked" Margin="10" />
+		<RadioButton x:Name="radCompletedTasks" Content="Completed Tasks" Checked="Filter_Checked" Margin="10" />
+
         </StackPanel>
             
         <ListBox Grid.Row="2" x:Name="listOfTasks" Margin="10,10,5,73" SelectionChanged="lstTasks_SelectionChanged">
