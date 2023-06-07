@@ -85,6 +85,7 @@ I recived feeback from charlie stating that:\
 Overall, it's a good design that's easy and simple to use. One thing you could consider adding is a way to show only completed tasks.
 
 I agree with the feedback i recvived from charlie about adding a way to see only the completed tasks only.
+Along side the already existing filters i added a third that allows you to see only completed tasks.
 
 
 ##  Evaluation
@@ -106,7 +107,7 @@ The code includes an "Edit" button that is enabled when a task is selected in th
 The code meets this requirement by checking for a selected task, calling the ShowDialog method to open the dialog box for editing, and updating the task if a valid edited task is returned.
    
 ### Implementation of Filters
-The code provides two radio buttons, "All Tasks" and "Incomplete Tasks," for filtering the displayed tasks. When a radio button is checked, the code updates the list box's ItemsSource property to display either all tasks or only the incomplete tasks.
+The code provides three radio buttons, "All Tasks", "Incomplete Tasks" and "Completed Tasks" for filtering the displayed tasks. When a radio button is checked, the code updates the list box's ItemsSource property to display either all tasks or only the incomplete tasks.
 
 The code fulfills this requirement by handling the radio button's Checked event and updating the ItemsSource property of the list box accordingly.
    
