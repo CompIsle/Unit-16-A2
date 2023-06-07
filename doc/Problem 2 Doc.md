@@ -40,13 +40,15 @@ graph TD
 A[Start] --> B[Read CSV File]
 B --> C[Create DataTable]
 C --> D[Create Book List]
-D --> E[Iterate over DataTable]
-E --> F[Create Book Object]
-F --> G[Add Book to List]
-G --> E
-E --> H[Print Sample Books]
-H --> I[Export List to CSV]
-I --> J[End]
+D --> E[Initialize Loop]
+E --> F[Read Next Row]
+F --> G[Create Book Object]
+G --> H[Add Book to List]
+H --> I[Loop Check]
+I -- Yes --> E
+I -- No --> J[Print Sample Books]
+J --> K[Export List to CSV]
+K --> L[End]
 ```
 
 This flowchart represents the high-level flow of the code and does not include all the details or conditional branches. It gives a general overview of the program's execution flow.
