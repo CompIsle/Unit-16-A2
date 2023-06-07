@@ -40,18 +40,29 @@ graph TD
 A[Start] --> B[Read CSV File]
 B --> C[Create DataTable]
 C --> D[Create Book List]
-D --> E[Initialize Loop]
-E --> F[Read Next Row]
-F --> G[Create Book Object]
-G --> H[Add Book to List]
-H --> I[Loop Check]
-I -- Yes --> E
-I -- No --> J[Print Sample Books]
-J --> K[Export List to CSV]
-K --> L[End]
-```
+D --> E[Iterate over DataTable]
+E --> F[Create Book Object]
+F --> G[Add Book to List]
+G --> E
+E --> H[Print Sample Books]
+H --> I[Export List to CSV]
+I --> J[End]
 
-This flowchart represents the high-level flow of the code and does not include all the details or conditional branches. It gives a general overview of the program's execution flow.
+```
+Flowchart Description:
+* The program starts.
+* It reads the CSV file containing data.
+* The data is converted into a DataTable object.
+* A list called "books" is created to store Book objects.
+* The program iterates over each row in the DataTable.
+* For each row, a Book object is created using the row values.
+* The Book object is added to the "books" list.
+* The program continues to the next row until all rows are processed.
+* After the loop, it prints the details of three sample books.
+* Finally, the list of books is exported to a CSV file.
+* The program ends.
+
+This flowchart provides a clear visual representation of the main steps involved in the program, including reading the CSV file, processing the data, and performing necessary operations on the Book objects.
 
 ## Test
 Test
