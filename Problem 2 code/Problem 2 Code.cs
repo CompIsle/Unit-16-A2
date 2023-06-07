@@ -8,15 +8,15 @@ using System.Text;
 
 namespace LibarySystem
 {
-    public class LibarySystem
+    public class Program
     {
         static void Main()
         {
             // Path to the CSV file
-            string csvFilePath = @"C:/Users/428884/Problem 2 Data.csv";
+            string csvFile = @"C:/Users/428884/Problem 2 Data.csv";
 
             // Read data from the CSV file and convert it to a DataTable
-            DataTable csvData = CSVreader.GetDataTableFromCSVFile(csvFilePath);
+            DataTable csvData = CSVreader.GetDataTableFromCSVFile(csvFile);
             // Console.WriteLine how many record program read
             Console.WriteLine($"Read {csvData.Rows.Count} records");
 
@@ -30,9 +30,10 @@ namespace LibarySystem
                 books.Add(new Book(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString()));
             }
 
-            // Print the details of two sample books
+            // Print the details of three sample books
             Console.WriteLine($"Sample - Book 1: {books[0]}");
-            Console.WriteLine($"Sample - Book 2: {books[2]}");
+            Console.WriteLine($"Sample - Book 26: {books[25]}");
+            Console.WriteLine($"Sample - Book 51: {books[50]}");
 
             // Export the list of books to a CSV file
             ExportToCSV(books, @"C:/output.csv");
@@ -40,10 +41,10 @@ namespace LibarySystem
         }
 
 
-        private static void ExportToCSV(List<Book> books, string csvFilePath)
+        private static void ExportToCSV(List<Book> books, string csvFile)
         {
             // Create a StreamWriter to write to the CSV file
-            using (var writer = new StreamWriter(csvFilePath))
+            using (var writer = new StreamWriter(csvFile))
             {
                 // Write the header row with column names
                 writer.WriteLine("Name,Title,PublishedIn,Publisher,Date,Cat");
@@ -59,14 +60,14 @@ namespace LibarySystem
 
     static class CSVreader
     {
-        public static DataTable GetDataTableFromCSVFile(string csvFilePath)
+        public static DataTable GetDataTableFromCSVFile(string csvFile)
         {
             DataTable csvData = new DataTable();
 
             try
             {
                 // Use TextFieldParser to read the CSV file
-                using (TextFieldParser csvReader = new TextFieldParser(csvFilePath))
+                using (TextFieldParser csvReader = new TextFieldParser(csvFile))
                 {
                     // Set the delimiters for parsing the fields
                     csvReader.SetDelimiters(new string[] { "," });

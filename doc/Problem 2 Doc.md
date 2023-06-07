@@ -1,6 +1,6 @@
 # Problem 2
 Introduction:\
-The College Library needs to implement a new index system for all its books. The objective is to automatically read book details from a stored CSV file, generate a unique index reference for each book, and write the indexed book details to a new CSV file. This project aims to demonstrate data and file handling using classes, objects, inheritance, polymorphism, and method overloading/overriding in C#.
+The College Library needs to implement a new index system for all its books. The objective is to automatically read book details from a stored CSV file, generate a unique index reference for each book, and write the indexed book details to a new CSV file.
 
 Requirements:\
 * Read book details (title, author, publisher, publication date) from a CSV file.
@@ -9,7 +9,7 @@ Requirements:\
 
 ## Design 
 ### Class Descriptions
-BookMinder Class:\
+Program Class:\
 Description: The main class responsible for managing the book indexing process.
 Methods:\
 Main(): The entry point of the program. Reads the book details from a CSV file, creates Book objects, and exports the indexed book details to a new CSV file.\
