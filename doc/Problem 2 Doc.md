@@ -37,15 +37,19 @@ Book(string name, string title, string publishedIn, string publisher, string dat
   
 ```mermaid
 graph TD
-A[Start] --> B[Define CSV file path]
-B --> C[Read data from CSV and convert to DataTable]
-C --> D[Create empty list of Book objects]
-D --> E[Iterate over DataTable and create Book objects]
-E --> F[Print details of two sample books]
-F --> G[Export list of books to CSV file]
-G --> H[Display success message]
-H --> I[End]
+A[Start] --> B[Read CSV File]
+B --> C[Create DataTable]
+C --> D[Create Book List]
+D --> E[Iterate over DataTable]
+E --> F[Create Book Object]
+F --> G[Add Book to List]
+G --> E
+E --> H[Print Sample Books]
+H --> I[Export List to CSV]
+I --> J[End]
 ```
+
+This flowchart represents the high-level flow of the code and does not include all the details or conditional branches. It gives a general overview of the program's execution flow.
 
 ## Test
 Test
