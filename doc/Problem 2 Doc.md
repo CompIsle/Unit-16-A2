@@ -73,7 +73,7 @@ The code is encapsulated within the LibarySystem namespace, providing proper org
 
 The code follows a modular approach with separate classes for different functionalities. The `Program` class handles the main logic, the CSVreader class provides CSV file handling functionality, and the Book class represents a book with its properties and methods.
 
-Exception Handling:** The code includes exception handling to catch and handle any potential errors that may occur during file reading or other operations.
+The code includes exception handling to catch and handle any potential errors that may occur during file reading or other operations.
 
 The CSVreader class effectively reads a CSV file and converts it into a DataTable. The Program class uses this functionality to process the book details.
 
