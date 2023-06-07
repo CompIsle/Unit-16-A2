@@ -135,6 +135,11 @@ namespace Problem_1
                         var incompleteTasks = tasks.Where(t => !t.Completed).ToList();
                         listOfTasks.ItemsSource = incompleteTasks;
                     }
+                    else if (radCompletedTasks.IsChecked == true)
+                    {
+                        var completedTasks = tasks.Where(t => t.Completed).ToList();
+                        listOfTasks.ItemsSource = completedTasks;
+                    }
                 }
             }
             catch (Exception ex)

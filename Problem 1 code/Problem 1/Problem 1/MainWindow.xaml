@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Problem_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="275">
+        Title="MainWindow" Height="550" Width="375">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="53*"/>
@@ -30,10 +30,9 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,10,0,10">
             <RadioButton x:Name="radAllTasks" Content="All Tasks" IsChecked="True" Checked="Filter_Checked" Margin="10" />
             <RadioButton x:Name="radIncompleteTasks" Content="Incomplete Tasks" Checked="Filter_Checked" Margin="10" />
-		<RadioButton x:Name="radCompletedTasks" Content="Completed Tasks" Checked="Filter_Checked" Margin="10" />
-
+            <RadioButton x:Name="radCompletedTasks" Content="Completed Tasks" Checked="Filter_Checked" Margin="10" />
         </StackPanel>
-            
+
         <ListBox Grid.Row="2" x:Name="listOfTasks" Margin="10,10,5,73" SelectionChanged="lstTasks_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -50,9 +49,8 @@
 
         <!--<StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,10,10,73">
         </StackPanel>-->
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,10,0,10">
-            <Button x:Name="btnDelete" Content="Delete" Click="DeleteTask_Click" IsEnabled="False" Margin="5,175,5,5" />
-            <Button x:Name="btnEdit" Content="Edit" Click="EditTask_Click" IsEnabled="False" Margin="5,175,5,5" Width="40"/>
-        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,10,0,10"/>
+        <Button x:Name="btnEdit" Content="Edit" Click="EditTask_Click" IsEnabled="False" Margin="188,223,76,30" Grid.Row="2"/>
+        <Button x:Name="btnDelete" Content="Delete" Click="DeleteTask_Click" IsEnabled="False" Margin="65,223,193,30" Grid.Row="2" />
     </Grid>
 </Window>
