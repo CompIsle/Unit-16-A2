@@ -15,7 +15,7 @@ namespace BookMinder
         static async Task Main()
         {
             // Path to the CSV file
-            string csvFilePath = @"C:/Problem 2 Data.csv";
+            string csvFilePath = @"C:/Users/428884/Problem 2 Data.csv";
 
             // Read data from the CSV file and convert it to a DataTable
             DataTable csvData = CSVreader.GetDataTableFromCSVFile(csvFilePath);

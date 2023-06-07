@@ -32,17 +32,14 @@ MainWindow.xaml.cs: This file contains the code-behind logic for the main window
    - The "Delete Task" button click event handler removes the selected task from the taskList collection.
    - The "Edit Task" button click event handler opens a dialog window (`EditTaskDialog`) to edit the selected task.
    
-Task.cs: This class represents a single task.
+Task class: This class represents a single task.
    - It implements the INotifyPropertyChanged interface to notify changes to UI elements.
    - The Task class has properties such as Title, Description, DueDate, and Completed, which can be accessed and modified.
    - Each property includes the OnPropertyChanged method, which raises the PropertyChanged event to notify the UI of property changes.
    
-### Code Design
 The code follows a code-behind model, where the UI logic is defined in the MainWindow.xaml.cs file. The code is organized into event handlers for various UI events, such as button clicks and selection changes.
 
 The use of an ObservableCollection<Task> to store and bind the tasks to the list box is a good choice, as it automatically updates the UI when tasks are added or modified. The Task class implements the INotifyPropertyChanged interface to enable two-way data binding and notify the UI when task properties change.
-
-This design separates the initialization of the task list, provides clearer property change handling, and keeps the event handling code in the code-behind file. It aims to improve code organization, readability, and maintainability.
 
 ### Flowchart:
 Below is a flowchart illustrating the flow of the application:
@@ -107,7 +104,7 @@ The code includes an "Edit" button that is enabled when a task is selected in th
 The code meets this requirement by checking for a selected task, calling the ShowDialog method to open the dialog box for editing, and updating the task if a valid edited task is returned.
    
 ### Implementation of Filters
-The code provides three radio buttons, "All Tasks", "Incomplete Tasks" and "Completed Tasks" for filtering the displayed tasks. When a radio button is checked, the code updates the list box's ItemsSource property to display either all tasks or only the incomplete tasks.
+The code provides three radio buttons, "All Tasks", "Incomplete Tasks" and "Completed Tasks" for filtering the displayed tasks. When a radio button is checked, the code updates the list box's ItemsSource property to display the correct filter.
 
 The code fulfills this requirement by handling the radio button's Checked event and updating the ItemsSource property of the list box accordingly.
    
