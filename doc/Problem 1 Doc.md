@@ -15,13 +15,12 @@ The WPF application is a Todo list manager that allows users to create, delete, 
 ### UI Design
 User Interface (UI):
 The UI of the application is designed using XAML, which allows for creating a visually appealing and interactive interface. The main window consists of the following UI elements:
-
-Title, Description, Due Date input fields: TextBlocks and TextBoxes for entering task details.
-"Add Task" button: Allows users to add a new task with the provided details.
-Task list: A ListBox to display the list of tasks.
-Task item template: A DataTemplate used to define the visual representation of each task in the ListBox.
-Checkboxes: Allows users to mark tasks as completed or incomplete.
-"Delete" and "Edit" buttons: Allows users to delete or edit selected tasks.
+* Title, Description, Due Date input fields: TextBlocks and TextBoxes for entering task details.
+* "Add Task" button: Allows users to add a new task with the provided details.
+* Task list: A ListBox to display the list of tasks.
+* Task item template: A DataTemplate used to define the visual representation of each task in the ListBox.
+* Checkboxes: Allows users to mark tasks as completed or incomplete.
+* "Delete" and "Edit" buttons: Allows users to delete or edit selected tasks.
 
 The application provides basic functionality for managing tasks, such as adding, editing, deleting, and filtering tasks. The UI elements are intuitive and self-explanatory, making it easy for users to interact with the application.
 
@@ -59,9 +58,7 @@ graph LR
 
 The flowchart starts from the "Start" node and loops back to the "User Interactions" node until the user decides to exit the application. The user can perform various actions such as adding a new task, deleting a task, or editing a task, which will result in updating the task list display accordingly.
 
-This flowchart provides a visual representation of the main flow of the application, highlighting the interactions between the user and the system.
-
-With this design documentation, you have a detailed overview of the application's design, including the UI elements, code structure, and flow of the application.
+This flowchart provides a visual representation of the main flow of the application, highlighting the interactions between 
 
 ## Test 
 Test 
