@@ -69,17 +69,17 @@ The flowchart visually represents the program's flow and logic, making it easier
 The test plan outlines various test scenarios, including testing the generation of unique index numbers, handling edge cases, and validating the exported data. It helps ensure the correctness and robustness of the implementation.
 
 #### Code Implementation:
-The code is encapsulated within the `LibarySystem` namespace, providing proper organization and preventing naming conflicts.
+The code is encapsulated within the LibarySystem namespace, providing proper organization and preventing naming conflicts.
 
-The code follows a modular approach with separate classes for different functionalities. The `Program` class handles the main logic, the `CSVreader` class provides CSV file handling functionality, and the `Book` class represents a book with its properties and methods.
+The code follows a modular approach with separate classes for different functionalities. The `Program` class handles the main logic, the CSVreader class provides CSV file handling functionality, and the Book class represents a book with its properties and methods.
 
 Exception Handling:** The code includes exception handling to catch and handle any potential errors that may occur during file reading or other operations.
 
-The `CSVreader` class effectively reads a CSV file and converts it into a `DataTable`. The `Program` class uses this functionality to process the book details.
+The CSVreader class effectively reads a CSV file and converts it into a DataTable. The Program class uses this functionality to process the book details.
 
-The `Book` class encapsulates the book details and generates a unique `Cat` value based on the provided data using a SHA256 hash function. The class also overrides the `ToString()` method to provide a readable representation of a book's details.
+The Book class encapsulates the book details and generates a unique Cat value based on the provided data using a SHA256 hash function. The class also overrides the ToString() method to provide a readable representation of a book's details.
 
-The `ExportToCSV()` method in the `Program` class successfully exports the list of books to a new CSV file, ensuring the correct formatting of the data.
+The ExportToCSV() method in the Program class successfully exports the list of books to a new CSV file, ensuring the correct formatting of the data.
 
 ### Overall Assessment:
 
