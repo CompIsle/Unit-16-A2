@@ -1,24 +1,23 @@
-using System;
+using Microsoft.VisualBasic.FileIO;
 using System.Collections.Generic;
+using System;
 using System.Data;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.VisualBasic.FileIO;
 
-namespace BookMinder
+namespace LibarySystem
 {
-    public class BookMinder
+    public class LibarySystem
     {
-        static async Task Main()
+        static void Main()
         {
             // Path to the CSV file
             string csvFilePath = @"C:/Users/428884/Problem 2 Data.csv";
 
             // Read data from the CSV file and convert it to a DataTable
             DataTable csvData = CSVreader.GetDataTableFromCSVFile(csvFilePath);
+            // Console.WriteLine how many record program read
             Console.WriteLine($"Read {csvData.Rows.Count} records");
 
             // Create a list to store the Book objects
@@ -33,11 +32,10 @@ namespace BookMinder
 
             // Print the details of two sample books
             Console.WriteLine($"Sample - Book 1: {books[0]}");
-            Console.WriteLine($"Sample - Book 2: {books[1]}");
+            Console.WriteLine($"Sample - Book 2: {books[2]}");
 
             // Export the list of books to a CSV file
             ExportToCSV(books, @"C:/output.csv");
-
             Console.WriteLine("Data exported successfully.");
         }
 
@@ -109,7 +107,7 @@ namespace BookMinder
             catch (Exception ex)
             {
                 // Handle any exceptions that occur during reading the CSV file
-                // You might want to add error logging or display an error message here
+                Console.WriteLine("Error occured");
             }
 
             return csvData;
@@ -143,29 +141,17 @@ namespace BookMinder
         {
             string source = name + title + publishedIn + publisher + date;
 
-            using (MD5 md5 = MD5.Create())
+            using (SHA256 sha256 = SHA256.Create())
             {
-                string hash = GetHash(md5, source);
-                return hash[..10];
+                // Compute the SHA256 hash of the source string
+                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(source));
+                // Convert the hash bytes to a hexadecimal string representation
+                string hash = BitConverter.ToString(hashBytes).Replace("-", "");
+                // Take the first 10 characters of the hash as the 'Cat' value
+                string cat = hash.Substring(0, 10);
+
+                return cat;
             }
-        }
-
-        private static string GetHash(HashAlgorithm hashAlgorithm, string input)
-        {
-            // Convert the input string to a byte array and compute the hash
-            byte[] data = hashAlgorithm.ComputeHash(Encoding.UTF8.GetBytes(input));
-
-            // Create a StringBuilder to collect the bytes and create a string
-            var sBuilder = new StringBuilder();
-
-            // Loop through each byte of the hashed data and format each one as a hexadecimal string
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-
-            // Return the hexadecimal string
-            return sBuilder.ToString();
         }
     }
 }
