@@ -60,6 +60,16 @@ The flowchart starts from the "Start" node and loops back to the "User Interacti
 
 This flowchart provides a visual representation of the main flow of the application, highlighting the interactions between 
 
+## Feedback of Design
+   
+I recived feeback from charlie stating that:\
+[Monday 20:30] Charlie Smith\
+Overall, it's a good design that's easy and simple to use. One thing you could consider adding is a way to show only completed tasks.
+
+I agree with the feedback i recvived from charlie about adding a way to see only the completed tasks only.
+Along side the already existing filters i added a third that allows you to see only completed tasks.
+
+
 ## Test 
 Test 
 
@@ -71,16 +81,7 @@ Test
 | 4 |  Redo of Test 3 after fixes |  Tittle = Get Milk / Description = Buy Milk / Due date = 2/03/2024 | Task is changed to new input  |  Task is changed to new input | Problem was fixed. had to add INotifyPropertyChanged to the task class to notify of any changes and update them. |
 | 5 |  Test to see if the filters are working | One completed and one non completed task  | When clicking the button/checkbox markded Complted, only completed tasks will appear  | It worked and you can filter which task you want to see | This meets the requirments of the brief  |
 
-   
-## Feedback
-   
-I recived feeback from charlie stating that:\
-[Monday 20:30] Charlie Smith\
-Overall, it's a good design that's easy and simple to use. One thing you could consider adding is a way to show only completed tasks.
-
-I agree with the feedback i recvived from charlie about adding a way to see only the completed tasks only.
-Along side the already existing filters i added a third that allows you to see only completed tasks.
-
+## Review against specification
 
 ##  Evaluation
 
