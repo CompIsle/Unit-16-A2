@@ -80,6 +80,18 @@ Test
 | 4 | test the otput to the csv file  | open the new csv file  | Problem 2 Data  | data in new csv file with hash numbers | new data is correctly there | it worked to the requirments | 
 
 ## Review againts specifications
+1. Read book details (title, author, publisher, publication date) from a CSV file.
+   - The CSVreader class successfully reads the CSV file and converts it into a DataTable, which contains the book details. This requirement is met.
+
+2. Generate a unique index reference for each book.
+   - The Book class generates a unique index reference (Cat) for each book using a SHA256 hash function based on the provided data. This requirement is met.
+
+3. Write the indexed book details to a new CSV file.
+   - The Program class includes the ExportToCSV() method, which exports the list of Book objects to a new CSV file. This requirement is met.
+
+The implementation of the code and the provided design documentation meet all the specified requirements. The code follows good programming practices, and the design effectively addresses the problem statement. The test plan also covers various scenarios to ensure the correctness and robustness of the implementation.
+
+Overall, the solution appears to be well-designed and implemented, meeting the specified requirements for the College Library Book Index System.
 
 ## Evaluation
 
