@@ -3,6 +3,6 @@ Assignment 2 of Unit 16
 
 The code for problem 1 is in the folder called problem 1 code. Inside this folder is a another folder, which is called problem 1, which contain a WPF application.
 
-The code for problem 2 is in the folder called problem 2 code. Inside this folder are the code and data for this problem.
+The code for problem 2 is in the folder called problem 2 code. Inside this folder is a console application amde using visual studio. To test if it has worked you can access the Output csv file at /Problem 2/Problem 2/bin/Debug/net7.0/Output.csv. This is also were the data is located.
 
 All documentation is in the doc folder including designs, test plans, test results and the evualtion.
