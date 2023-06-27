@@ -79,6 +79,8 @@ Test
 | 3 | 	To test edge case: Large CSV file  | Use a large CSV file with a significant number of book records  |  Large CSV file | Large CSV file  | Large CSV file processed without any performance issues  | Ensure the system can handle large datasets | 
 | 4 | test the otput to the csv file  | open the new csv file  | Problem 2 Data  | data in new csv file with hash numbers | new data is correctly there | it worked to the requirments | 
 
+## Optimization
+
 ## Review againts specifications
 1. Read book details (title, author, publisher, publication date) from a CSV file.
    - The CSVreader class successfully reads the CSV file and converts it into a DataTable, which contains the book details. This requirement is met.
