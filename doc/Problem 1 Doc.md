@@ -82,6 +82,30 @@ Test
 | 5 |  Test to see if the filters are working | One completed and one non completed task  | When clicking the button/checkbox markded Complted, only completed tasks will appear  | It worked and you can filter which task you want to see | This meets the requirments of the brief  |
 
 ## Review against specification
+1. Creation and deletion of tasks:
+   - The application allows users to create new tasks by entering a title, description, and due date.
+   - Users can add tasks using the "Add Task" button.
+   - Tasks can be deleted from the task list using the "Delete" button.
+
+2. Tracking the done state and allowing tasks to be set as complete:
+   - Each task in the list has a checkbox that allows users to mark it as completed.
+   - The completion status of a task can be toggled by checking/unchecking the checkbox.
+
+3. Supporting title, description, due date, completion status, with the ability to modify description, due date, and completion status:
+   - Each task includes a title, description, due date, and completion status.
+   - Users can edit the title, description, and due date of a task by clicking the "Edit" button.
+   - The completion status can be modified by checking/unchecking the task's checkbox.
+
+4. Displaying a list of tasks:
+   - The application displays a list of tasks in a user-friendly format.
+   - The list includes the title, description, due date, and completion status of each task.
+
+5. Toggling whether all tasks or only incomplete tasks are displayed:
+   - The application provides three radio buttons: "All Tasks," "Incomplete Tasks," and "Completed Tasks."
+   - Users can select a radio button to filter and display the desired set of tasks:
+
+Overall, the final outcome of the Todo list application meets all the specified requirements. It allows users to create, delete, and edit tasks while tracking their completion status. The tasks are displayed in a list, and users can choose to view all tasks or filter them based on completion status.
+
 
 ##  Evaluation
 
