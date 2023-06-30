@@ -82,7 +82,14 @@ Test
 | 5 |  Test to see if the filters are working | One completed and one non completed task  | When clicking the button/checkbox markded Complted, only completed tasks will appear  | It worked and you can filter which task you want to see | This meets the requirments of the brief  |
 
 ## Optimization
+Implementation of Filters:
+Initially, the design included two filters, "All Tasks" and "Incomplete Tasks." These filters allowed users to view either all tasks or only the incomplete ones. However, based on the feedback from Charlie, a new filter, "Completed Tasks," was added. This enhancement provides users with the ability to filter and view only the tasks that have been marked as completed. The implementation of the new filter involved adding a new radio button for "Completed Tasks" and updating the code to handle the filter selection appropriately. When the "Completed Tasks" radio button is checked, the list box's ItemsSource property is updated to display only the completed tasks. This addition improves the usability and flexibility of the application by allowing users to focus on specific subsets of their tasks, such as viewing only completed tasks to track progress.
 
+EditTask_Click Implementation:
+Initially, the code for editing a task was not updating the selected task with the edited values. After identifying the issue, the necessary adjustments were made to ensure that the selected task gets properly updated with the edited title, description, and due date.
+The fix involved modifying the EditTask_Click event handler to open a dialog box (EditTaskDialog) for editing the task. If a valid task object is returned from the dialog, the selected task's properties are updated with the edited values.This improvement ensures that users can accurately modify the details of their tasks and have the changes reflected in the task list. This meets the reuirment of the task being able to be edited.
+
+These optimizations address specific areas of the design and implementation, enhancing the functionality and usability of the Todo list application. 
 
 ## Review against specification
 1. Creation and deletion of tasks:
