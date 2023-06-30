@@ -80,6 +80,66 @@ Test
 | 4 | test the otput to the csv file  | open the new csv file  | Problem 2 Data  | data in new csv file with hash numbers | new data is correctly there | it worked to the requirments | 
 
 ## Optimization
+```csharp
+// Original Code:
+public readonly record struct Book
+{
+    public Book(string name, string title, string publishedIn, string publisher, string date)
+    {
+        // Assign the provided values to the corresponding properties
+        Name = name;
+        Title = title;
+        PublishedIn = publishedIn;
+        Publisher = publisher;
+        Date = date;
+
+        // Generate the Cat value based on the provided data
+        Cat = GetCatFor(name, title, publishedIn, publisher, date);
+    }
+
+    // Properties of the Book record
+    public string Cat { get; }
+    public string Name { get; }
+    public string Title { get; }
+    public string PublishedIn { get; }
+    public string Publisher { get; }
+    public string Date { get; }
+
+    // ...
+}
+```
+Optimization:
+1. Modified Book Constructor: In the original code, the `Book` constructor accepted individual string parameters for each book attribute. However, in the optimized code, the constructor has been modified to accept a `DataRow` object instead. This modification allows for a more efficient and cleaner way of creating a `Book` object by directly accessing the values from the `DataRow`.
+
+```csharp
+public readonly record struct Book
+{
+    public Book(DataRow row)
+    {
+        // Assign the provided values from the DataRow to the corresponding properties
+        Name = row[0].ToString();
+        Title = row[1].ToString();
+        PublishedIn = row[2].ToString();
+        Publisher = row[3].ToString();
+        Date = row[4].ToString();
+
+        // Generate the Cat value based on the provided data
+        Cat = GetCatFor(Name, Title, PublishedIn, Publisher, Date);
+    }
+
+    // Properties of the Book record
+    public string Cat { get; }
+    public string Name { get; }
+    public string Title { get; }
+    public string PublishedIn { get; }
+    public string Publisher { get; }
+    public string Date { get; }
+
+    // ...
+}
+```
+Explanation: 
+By accepting a `DataRow` object as a parameter, the optimized constructor eliminates the need for multiple string arguments. It directly extracts the values from the `DataRow` using the index and converts them to strings. This modification improves code readability and reduces the number of variables and assignments needed to create a `Book` object, resulting in cleaner and more efficient code.
 
 ## Review againts specifications
 1. Read book details (title, author, publisher, publication date) from a CSV file.
