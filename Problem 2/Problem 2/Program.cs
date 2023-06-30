@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic.FileIO;
+using Microsoft.VisualBasic.FileIO;
 using System.Collections.Generic;
 using System;
 using System.Data;
@@ -131,18 +131,18 @@ namespace LibarySystem
 
     public readonly record struct Book
     {
-        public Book(string name, string title, string publishedIn, string publisher, string date)
-        {
-            // Assign the provided values to the corresponding properties
-            Name = name;
-            Title = title;
-            PublishedIn = publishedIn;
-            Publisher = publisher;
-            Date = date;
+    public Book(DataRow row)
+    {
+        // Assign the provided values from the DataRow to the corresponding properties
+        Name = row[0].ToString();
+        Title = row[1].ToString();
+        PublishedIn = row[2].ToString();
+        Publisher = row[3].ToString();
+        Date = row[4].ToString();
 
-            // Generate the Cat value based on the provided data
-            Cat = GetCatFor(name, title, publishedIn, publisher, date);
-        }
+        // Generate the Cat value based on the provided data
+        Cat = GetCatFor(Name, Title, PublishedIn, Publisher, Date);
+    }
 
         // Properties of the Book record
         public string Cat { get; }
