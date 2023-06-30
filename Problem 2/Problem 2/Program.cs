@@ -44,7 +44,7 @@ namespace LibarySystem
                 foreach (DataRow row in csvData.Rows)
                 {
                     // Create a new Book object using the values from the row
-                    books.Add(new Book(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString()));
+                    books.Add(new Book(row));
                 }
 
                 // Print the details of three sample books
