@@ -15,7 +15,8 @@ namespace LibarySystem
             try
             {
                 /*
-                Attribution/Refrencing
+                Attribution/Refrencing:
+                
                 Book Minder:
                 CSVReader – Class to read the csv form data file – Modified(Removed parts)
                 Data table – Way to store data from csv file
@@ -24,9 +25,7 @@ namespace LibarySystem
                 Exportocsv – How to export data to new csv file
                 Getcafor – How to generate hash for data from csv file
                 Added multiple tries and catches to catch errors
-
-                ?:
-                Public book – Variable names needed to be the same because of the provided data file.
+                Public book
                 */
                 // Path to the CSV file
                 string csvFile = @"Problem 2 Data.csv";
