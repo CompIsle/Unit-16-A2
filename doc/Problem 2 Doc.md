@@ -109,7 +109,8 @@ public readonly record struct Book
 }
 ```
 Optimization:
-1. Modified Book Constructor: In the original code, the `Book` constructor accepted individual string parameters for each book attribute. However, in the optimized code, the constructor has been modified to accept a `DataRow` object instead. This modification allows for a more efficient and cleaner way of creating a `Book` object by directly accessing the values from the `DataRow`.
+
+Modified Book Constructor: In the original code, the Book constructor accepted individual string parameters for each book attribute. However, in the optimized code, the constructor has been modified to accept a DataRow object instead. This modification allows for a more efficient and cleaner way of creating a Book object by directly accessing the values from the DataRow.
 
 ```csharp
 public readonly record struct Book
@@ -139,7 +140,8 @@ public readonly record struct Book
 }
 ```
 Explanation: 
-By accepting a `DataRow` object as a parameter, the optimized constructor eliminates the need for multiple string arguments. It directly extracts the values from the `DataRow` using the index and converts them to strings. This modification improves code readability and reduces the number of variables and assignments needed to create a `Book` object, resulting in cleaner and more efficient code.
+
+By accepting a DataRow object as a parameter, the optimized constructor eliminates the need for multiple string arguments. It directly extracts the values from the DataRow using the index and converts them to strings. This modification improves code readability and reduces the number of variables and assignments needed to create a Book object, resulting in cleaner and more efficient code.
 
 ## Review againts specifications
 1. Read book details (title, author, publisher, publication date) from a CSV file.
